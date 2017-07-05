@@ -1,4 +1,6 @@
-<?php require_once("_inc/header.php"); ?>
+<?php
+$active = "createride";
+require_once("_inc/header.php"); ?>
          <style>
            #map {
             height: 400px;
