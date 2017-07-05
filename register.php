@@ -17,7 +17,7 @@ $active = "register";
         <!-- /.row -->
             <ul class="nav nav-tabs">
               <li role="presentation" class="active"><a href="#">I'm a student !</a></li>
-              <li role="presentation"><a href="register_compagny.php">I'm a compagny !</a></li>
+              <li role="presentation"><a href="register_company.php">I'm a compagny !</a></li>
             </ul>
             <br/>
 
