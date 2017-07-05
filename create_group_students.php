@@ -1,5 +1,5 @@
 <?php
-$active = "createride";
+$active = "groupsofstudents";
 require_once("_inc/header.php"); ?>
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">

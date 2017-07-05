@@ -53,6 +53,15 @@
                     <li <?php if(isset($active)) if($active == "myrides") echo "class='active'"; ?>>
                         <a href="rides.php">My rides</a>
                     </li>
+                    <li <?php if(isset($active)) if($active == "groupsofstudents") echo "class='active'"; ?>>
+                        <a href="create_group_students.php">Groups of students</a>
+                    </li>
+                    <li <?php if(isset($active)) if($active == "refunddriver") echo "class='active'"; ?>>
+                        <a href="refund_driver.php">Refund a driver</a>
+                    </li>
+                    <li <?php if(isset($active)) if($active == "myrides") echo "class='active'"; ?>>
+                        <a href="rides.php">My rides</a>
+                    </li>
                     <li <?php if(isset($active)) if($active == "login") echo "class='active'"; ?>>
                         <a href="connection.php">Login</a>
                     </li>
