@@ -14,8 +14,8 @@
         </div>
         <!-- /.row -->
             <ul class="nav nav-tabs">
-              <li role="presentation" class="active"><a href="#">I'm a student !</a></li>
-              <li role="presentation"><a href="register_compagny.php">I'm a compagny !</a></li>
+              <li role="presentation"><a href="register.php">I'm a student !</a></li>
+              <li role="presentation" class="active"><a href="#">I'm a compagny !</a></li>
             </ul>
             <br/>
 
@@ -23,24 +23,14 @@
         <div class="row">
 
             <!-- Contact Details Column -->
-
               <form>
   <div class="col-md-6">
-                <div class="form-group">
-                  <label for="name">Gender</label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                    Male
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-                    Female
-                </div>
+
                   <div class="input-group form-group">
                     <span class="input-group-addon" id="basic-addon1">Name</span>
                     <input type="text" class="form-control" id="name" placeholder="Your name">
                   </div>
-                  <div class="input-group form-group">
-                      <span class="input-group-addon" id="basic-addon1">Lastname</span>
-                    <input type="text" class="form-control" id="lastname" placeholder="Your lastname">
-                  </div>
+
                   <div class="input-group form-group">
                     <span class="input-group-addon" id="basic-addon1">Address</span>
                     <input type="text" class="form-control" id="address" placeholder="Your address">
@@ -71,11 +61,7 @@
                       <span class="input-group-addon" id="basic-addon1">Confirmation</span>
                     <input type="password" class="form-control" id="password_confirmation" placeholder="Confirm your password">
                   </div>
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> I'm a driver !
-                    </label>
-                  </div>
+
                   <button type="submit" class="btn btn-primary">Send</button>
                 </form>
             </div>

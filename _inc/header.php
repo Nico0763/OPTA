@@ -54,7 +54,10 @@
                         <a href="services.html">Services</a>
                     </li>
                     <li class="active">
-                        <a href="connection.php">Connection</a>
+                        <a href="connection.php">Login</a>
+                    </li>
+                    <li class="active">
+                        <a href="register.php">Register</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
