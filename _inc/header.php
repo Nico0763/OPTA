@@ -54,7 +54,7 @@
                         <a href="services.html">Services</a>
                     </li>
                     <li class="active">
-                        <a href="contact.html">Contact</a>
+                        <a href="connection.php">Connection</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
