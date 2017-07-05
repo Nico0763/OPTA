@@ -17,7 +17,7 @@ require_once("_inc/header.php"); ?>
         <!-- /.row -->
             <ul class="nav nav-tabs">
               <li role="presentation"><a href="register.php">I'm a student !</a></li>
-              <li role="presentation" class="active"><a href="#">I'm a compagny !</a></li>
+              <li role="presentation" class="active"><a href="#">I'm a company !</a></li>
             </ul>
             <br/>
 
@@ -29,7 +29,7 @@ require_once("_inc/header.php"); ?>
   <div class="col-md-6">
 
                   <div class="input-group form-group">
-                    <span class="input-group-addon" id="basic-addon1">Name</span>
+                    <span class="input-group-addon" id="basic-addon1">Name*</span>
                     <input type="text" class="form-control" id="name" placeholder="Your name">
                   </div>
 
@@ -48,19 +48,19 @@ require_once("_inc/header.php"); ?>
                 </div>
                 <div class="col-md-6">
                   <div class="input-group form-group">
-                      <span class="input-group-addon" id="basic-addon1">Mail</span>
+                      <span class="input-group-addon" id="basic-addon1">Mail*</span>
                     <input type="email" class="form-control" id="mail" placeholder="Your mail">
                   </div>
                   <div class="input-group form-group">
-                      <span class="input-group-addon" id="basic-addon1">Confirmation</span>
+                      <span class="input-group-addon" id="basic-addon1">Confirmation*</span>
                     <input type="email" class="form-control" id="mail_confirmation" placeholder="Confirm your mail">
                   </div>
                   <div class="input-group form-group">
-                      <span class="input-group-addon" id="basic-addon1">Password</span>
+                      <span class="input-group-addon" id="basic-addon1">Password*</span>
                     <input type="password" class="form-control" id="password" placeholder="Your password">
                   </div>
                   <div class="input-group form-group">
-                      <span class="input-group-addon" id="basic-addon1">Confirmation</span>
+                      <span class="input-group-addon" id="basic-addon1">Confirmation*</span>
                     <input type="password" class="form-control" id="password_confirmation" placeholder="Confirm your password">
                   </div>
 

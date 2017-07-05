@@ -36,41 +36,41 @@ $active = "register";
                     Female
                 </div>
                   <div class="input-group form-group">
-                    <span class="input-group-addon" id="basic-addon1">Name</span>
+                    <span class="input-group-addon" id="basic-addon1">Name*</span>
                     <input type="text" class="form-control" id="name" placeholder="Your name">
                   </div>
                   <div class="input-group form-group">
-                      <span class="input-group-addon" id="basic-addon1">Lastname</span>
+                      <span class="input-group-addon" id="basic-addon1">Lastname*</span>
                     <input type="text" class="form-control" id="lastname" placeholder="Your lastname">
                   </div>
                   <div class="input-group form-group">
-                    <span class="input-group-addon" id="basic-addon1">Address</span>
+                    <span class="input-group-addon" id="basic-addon1">Address*</span>
                     <input type="text" class="form-control" id="address" placeholder="Your address">
                   </div>
                   <div class="input-group form-group">
-                      <span class="input-group-addon" id="basic-addon1">PC</span>
+                      <span class="input-group-addon" id="basic-addon1">PC*</span>
                     <input type="text" class="form-control" id="pc" placeholder="Your postal code">
                   </div>
                   <div class="input-group form-group">
-                    <span class="input-group-addon" id="basic-addon1">City</span>
+                    <span class="input-group-addon" id="basic-addon1">City*</span>
                     <input type="text" class="form-control" id="city" placeholder="Your city">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="input-group form-group">
-                      <span class="input-group-addon" id="basic-addon1">Mail</span>
+                      <span class="input-group-addon" id="basic-addon1">Mail*</span>
                     <input type="email" class="form-control" id="mail" placeholder="Your mail">
                   </div>
                   <div class="input-group form-group">
-                      <span class="input-group-addon" id="basic-addon1">Confirmation</span>
+                      <span class="input-group-addon" id="basic-addon1">Confirmation*</span>
                     <input type="email" class="form-control" id="mail_confirmation" placeholder="Confirm your mail">
                   </div>
                   <div class="input-group form-group">
-                      <span class="input-group-addon" id="basic-addon1">Password</span>
+                      <span class="input-group-addon" id="basic-addon1">Password*</span>
                     <input type="password" class="form-control" id="password" placeholder="Your password">
                   </div>
                   <div class="input-group form-group">
-                      <span class="input-group-addon" id="basic-addon1">Confirmation</span>
+                      <span class="input-group-addon" id="basic-addon1">Confirmation*</span>
                     <input type="password" class="form-control" id="password_confirmation" placeholder="Confirm your password">
                   </div>
                   <div class="checkbox">
