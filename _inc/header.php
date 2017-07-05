@@ -59,6 +59,9 @@
                     <li <?php if(isset($active)) if($active == "register") echo "class='active'"; ?> >
                         <a href="register.php">Register</a>
                     </li>
+                    <li <?php if(isset($active)) if($active == "drive") echo "class='active'"; ?> >
+                        <a href="drive.php">Drive    ! </a>
+                    </li>
 
                 </ul>
             </div>
