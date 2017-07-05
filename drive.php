@@ -135,7 +135,9 @@ require_once("_inc/header.php"); ?>
                        </div>
                      </div>
                    </div>
-                   <button type="button" style="width:100%" class="btn btn-primary">Send a message to the passenger</button>
+                   <button type="button" style="width:100%" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Send a message to the passenger
+                   </button>
 
                    <div style="margin-top:15px" class="row">
                       <div class="col col-md-8">
@@ -152,7 +154,7 @@ require_once("_inc/header.php"); ?>
                    <div style="margin-top:15px" class="row">
                       <div class="col col-md-6">
                           <button type="button" style="width:100%" class="btn btn-danger">Not present</button>
-                      
+
                       </div>
                       <div class="col col-md-6">
                         <button type="button" style="width:100%" class="btn btn-success">Is present</button>
@@ -160,6 +162,28 @@ require_once("_inc/header.php"); ?>
                    </div>
                 </div>
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Send a message to the passenger</h4>
+        </div>
+        <div class="modal-body">
+          <textarea class="form-control"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
         <!-- /.row -->
 
 
