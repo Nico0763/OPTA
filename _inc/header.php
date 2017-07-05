@@ -51,7 +51,7 @@
                         <a href="about.html">About</a>
                     </li>
                     <li>
-                        <a href="services.html">Services</a>
+                        <a href="rides.php">My rides</a>
                     </li>
                     <li class="active">
                         <a href="connection.php">Login</a>
