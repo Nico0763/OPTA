@@ -1,4 +1,6 @@
-<?php require_once("_inc/header.php"); ?>
+<?php
+$active = "login";
+require_once("_inc/header.php"); ?>
 
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">

@@ -50,13 +50,13 @@
                     <li>
                         <a href="about.html">About</a>
                     </li>
-                    <li>
+                    <li <?php if(isset($active)) if($active == "myrides") echo "class='active'"; ?>>
                         <a href="rides.php">My rides</a>
                     </li>
-                    <li class="active">
+                    <li <?php if(isset($active)) if($active == "login") echo "class='active'"; ?>>
                         <a href="connection.php">Login</a>
                     </li>
-                    <li class="active">
+                    <li <?php if(isset($active)) if($active == "register") echo "class='active'"; ?> >
                         <a href="register.php">Register</a>
                     </li>
                     <li class="dropdown">
