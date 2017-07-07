@@ -1,6 +1,34 @@
 <?php
 $active = "createride";
-require_once("_inc/header.php"); ?>
+require_once("_inc/header.php"); 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "OPTA";
+try
+{
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+
+    $sql = "SELECT * FROM groups";
+    $result = $conn->query($sql);
+
+    
+    $conn->close();
+}
+catch(PDOException $e)
+{
+     echo $sql . "<br>" . $e->getMessage();
+}
+
+?>
+
+
+?>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
         <style>
            #map {
@@ -47,9 +75,14 @@ require_once("_inc/header.php"); ?>
                     <div class="form-group">
                         <label for="group_students">Select a group of students</label>
                         <select id="groupstudents" class="form-control">
-                            <option>Group 1</option>
-                            <option>Group 2</option>
-                            <option>Group 3</option>
+                            <?php
+                            if ($result->num_rows > 0) {
+                                // output data of each row
+                                while($row = $result->fetch_assoc()) {
+                                    echo "<option value='" . $row["id_group"]. "'>" . $row["g_name"]. " </option>";
+                                }
+                            } 
+                            ?>
                         </select>
                     </div>
                     <button  onclick="save_ride();" class="btn btn-primary">Save</button>
