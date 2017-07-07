@@ -25,7 +25,7 @@ require_once("_inc/header.php"); ?>
         <div class="row">
 
             <!-- Contact Details Column -->
-              <form>
+            
   <div class="col-md-6">
 
                   <div class="input-group form-group">
@@ -64,12 +64,46 @@ require_once("_inc/header.php"); ?>
                     <input type="password" class="form-control" id="password_confirmation" placeholder="Confirm your password">
                   </div>
 
-                  <button type="submit" class="btn btn-primary">Send</button>
-                </form>
+                  <button onclick="add_company();" class="btn btn-primary">Send</button>
+                
             </div>
         </div>
         <!-- /.row -->
 
+        <script>
+          function add_company(){
+            var name = document.getElementById('name').value;
+            var address = document.getElementById('address').value;
+            var pc = document.getElementById('pc').value;
+            var city = document.getElementById('city').value;
+            var mail = document.getElementById('mail').value;
+            var mail_confirmation = document.getElementById('mail_confirmation').value;
+            var password = document.getElementById('password').value;
+            var password_confirmation = document.getElementById('password_confirmation').value;
+            
+            if(name == "" || address == "" || pc == "" || city == "" || mail == "" || mail_confirmation == "" || password == "" || password_confirmation == "") {
+              alert("Please complete all fields");
+            }else if(mail != mail_confirmation){
+              alert("The field 'mail' is different from the field 'mail confirmation'.");
+            }else if(password != password_confirmation){
+              alert("The field 'password' is different from the field 'password confirmation'.");
+            }else{
+              var variables = "name="+name+"&address="+address+"&pc="+pc+"&city="+city+"&mail="+mail+"&password="+password;
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                      alert(this.responseText); 
+                      if(this.responseText == "Company added !"){
+                        setTimeout(function (){ window.location.replace("connection.php"); }, 500);
+                      }                                    
+                  }
+              };
+              xmlhttp.open("POST", "ajax/savecompany.php", true);
+              xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+              xmlhttp.send(variables);
+            }
+          }
 
+        </script>
 
         <?php require_once("_inc/footer.php"); ?>
