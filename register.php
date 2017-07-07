@@ -107,7 +107,7 @@ $active = "register";
             }else{
               var driver = "0";
             }
-            
+
             
             if(name == "" || lastname == "" || address == "" || pc == "" || city == "" || mail == "" || mail_confirmation == "" || password == "" || password_confirmation == "") {
               alert("Please complete all fields");
@@ -116,7 +116,7 @@ $active = "register";
             }else if(password != password_confirmation){
               alert("The field 'password' is different from the field 'password confirmation'.");
             }else{
-              var variables = "name="+name+"&lastname="+lastname+"&address="+address+"&pc="+pc+"&city="+city+"&mail="+mail+"&mail_confirmation="+mail_confirmation+"&password="+password+"&password_confirmation="+password_confirmation+"&driver="+driver+"&sexe="+sexe;
+              var variables = "name="+name+"&lastname="+lastname+"&address="+address+"&pc="+pc+"&city="+city+"&mail="+mail+"&password="+password+"&driver="+driver+"&sexe="+sexe;
               var xmlhttp = new XMLHttpRequest();
               xmlhttp.onreadystatechange = function() {
                   if (this.readyState == 4 && this.status == 200) {
@@ -126,7 +126,7 @@ $active = "register";
                       }                                    
                   }
               };
-              xmlhttp.open("POST", "saveregister.php", true);
+              xmlhttp.open("POST", "ajax/saveregister.php", true);
               xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
               xmlhttp.send(variables);
             }
