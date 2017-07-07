@@ -14,6 +14,11 @@ $active = "register";
                 </ol>
             </div>
         </div>
+        <div id="alert">
+
+
+
+        </div>
         <!-- /.row -->
             <ul class="nav nav-tabs">
               <li role="presentation" class="active"><a href="#">I'm a student !</a></li>
@@ -85,6 +90,16 @@ $active = "register";
         <!-- /.row -->
 
         <script>
+           function setError(text)
+          {
+            document.getElementById("alert").innerHTML = "<div class='alert alert-danger fade in'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Error! </strong>" +  text +"</div>";
+          }
+
+          function setSuccess(text)
+          {
+            document.getElementById("alert").innerHTML = "<div class='alert alert-success fade in'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong></strong>" +  text +"</div>";
+          }
+
           function add_student(){
             if(document.getElementById('sexeM').checked == true){
               var sexe = 'M';
@@ -110,20 +125,22 @@ $active = "register";
 
             
             if(name == "" || lastname == "" || address == "" || pc == "" || city == "" || mail == "" || mail_confirmation == "" || password == "" || password_confirmation == "") {
-              alert("Please complete all fields");
+              setError("Please complete all fields");
             }else if(mail != mail_confirmation){
-              alert("The field 'mail' is different from the field 'mail confirmation'.");
+              setError("The field 'mail' is different from the field 'mail confirmation'.");
             }else if(password != password_confirmation){
-              alert("The field 'password' is different from the field 'password confirmation'.");
+              setError("The field 'password' is different from the field 'password confirmation'.");
             }else{
               var variables = "name="+name+"&lastname="+lastname+"&address="+address+"&pc="+pc+"&city="+city+"&mail="+mail+"&password="+password+"&driver="+driver+"&sexe="+sexe;
               var xmlhttp = new XMLHttpRequest();
               xmlhttp.onreadystatechange = function() {
-                  if (this.readyState == 4 && this.status == 200) {
-                      alert(this.responseText); 
+                  if (this.readyState == 4 && this.status == 200) { 
                       if(this.responseText == "Student added !"){
+                        setSuccess(this.responseText);
                         setTimeout(function (){ window.location.replace("connection.php"); }, 500);
-                      }                                    
+                      }else{
+                        setError(this.responseText);
+                      }                                   
                   }
               };
               xmlhttp.open("POST", "ajax/saveregister.php", true);
