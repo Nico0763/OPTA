@@ -26,13 +26,13 @@ $active = "register";
 
             <!-- Contact Details Column -->
 
-              <form>
-  <div class="col-md-6">
+              
+          <div class="col-md-6">
                 <div class="form-group">
                   <label for="name">Gender</label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                  <input type="radio" name="optionsRadios" id="sexeM" value="M" checked>
                     Male
-                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                    <input type="radio" name="optionsRadios" id="sexeF" value="F">
                     Female
                 </div>
                   <div class="input-group form-group">
@@ -75,15 +75,63 @@ $active = "register";
                   </div>
                   <div class="checkbox">
                     <label>
-                      <input type="checkbox"> I'm a driver !
+                      <input id="driver" type="checkbox"> I'm a driver !
                     </label>
                   </div>
-                  <button type="submit" class="btn btn-primary">Send</button>
-                </form>
+                  <button onclick="add_student()" class="btn btn-primary">Send</button>
+                
             </div>
         </div>
         <!-- /.row -->
 
+        <script>
+          function add_student(){
+            if(document.getElementById('sexeM').checked == true){
+              var sexe = 'M';
+            }else if(document.getElementById('sexeF').checked == true){
+              var sexe = 'F';
+            }else{
+              var sexe = 'M';
+            }
+            var name = document.getElementById('name').value;
+            var lastname = document.getElementById('lastname').value;
+            var address = document.getElementById('address').value;
+            var pc = document.getElementById('pc').value;
+            var city = document.getElementById('city').value;
+            var mail = document.getElementById('mail').value;
+            var mail_confirmation = document.getElementById('mail_confirmation').value;
+            var password = document.getElementById('password').value;
+            var password_confirmation = document.getElementById('password_confirmation').value;
+            if(document.getElementById('driver').checked == true){
+              var driver = "1";
+            }else{
+              var driver = "0";
+            }
+            
+            
+            if(name == "" || lastname == "" || address == "" || pc == "" || city == "" || mail == "" || mail_confirmation == "" || password == "" || password_confirmation == "") {
+              alert("Please complete all fields");
+            }else if(mail != mail_confirmation){
+              alert("The field 'mail' is different from the field 'mail confirmation'.");
+            }else if(password != password_confirmation){
+              alert("The field 'password' is different from the field 'password confirmation'.");
+            }else{
+              var variables = "name="+name+"&lastname="+lastname+"&address="+address+"&pc="+pc+"&city="+city+"&mail="+mail+"&mail_confirmation="+mail_confirmation+"&password="+password+"&password_confirmation="+password_confirmation+"&driver="+driver+"&sexe="+sexe;
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                      alert(this.responseText); 
+                      if(this.responseText == "Student added !"){
+                        setTimeout(function (){ window.location.replace("connection.php"); }, 500);
+                      }                                    
+                  }
+              };
+              xmlhttp.open("POST", "saveregister.php", true);
+              xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+              xmlhttp.send(variables);
+            }
+          }
 
+        </script>
 
         <?php require_once("_inc/footer.php"); ?>
