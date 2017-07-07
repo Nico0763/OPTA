@@ -1,6 +1,6 @@
 <?php
 $active = "createride";
-require_once("_inc/header.php"); 
+require_once("_inc/header.php");
 
 $servername = "localhost";
 $username = "root";
@@ -12,12 +12,12 @@ try
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-    } 
+    }
 
     $sql = "SELECT * FROM groups";
     $result = $conn->query($sql);
 
-    
+
     $conn->close();
 }
 catch(PDOException $e)
@@ -28,7 +28,7 @@ catch(PDOException $e)
 ?>
 
 
-?>
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
         <style>
            #map {
@@ -48,6 +48,10 @@ catch(PDOException $e)
                 </ol>
             </div>
         </div>
+        <div id="alert">
+
+        </div>
+
 
         <!-- Content Row -->
         <div class="row">
@@ -64,10 +68,15 @@ catch(PDOException $e)
                         <!--<input type="text" class="form-control" id="departure" placeholder="Departure">-->
                         <input id="destination" class="form-control" type="text" placeholder="Enter a location">
                     </div>
-                    <div class="input-group form-group">
-                        <span class="input-group-addon" id="basic-addon1">Departure time</span>
-                        <input type="text" class="form-control" id="departuretime" placeholder="00:00:00">
-                    </div>
+                        <div class="input-group date form-group" id="datepicker">
+                          <span class="input-group-addon">
+                              <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                            <input type="text" id="departuretime" class="form-control">
+
+                        </div>
+
+
                     <div class="input-group form-group">
                         <span class="input-group-addon" id="basic-addon1">Time of ride</span>
                         <input type="text" class="form-control" id="timeride" placeholder="00:00">
@@ -81,7 +90,7 @@ catch(PDOException $e)
                                 while($row = $result->fetch_assoc()) {
                                     echo "<option value='" . $row["id_group"]. "'>" . $row["g_name"]. " </option>";
                                 }
-                            } 
+                            }
                             ?>
                         </select>
                     </div>
@@ -91,6 +100,16 @@ catch(PDOException $e)
                 <label>Destination</label>
                 <div id="map"></div>
                     <script>
+                      function setError(text)
+                      {
+                        document.getElementById("alert").innerHTML = "<div class='alert alert-danger fade in'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Error!</strong>" +  text +"</div>";
+                      }
+                      function setSuccess(text)
+                      {
+                        document.getElementById("alert").innerHTML = "<div class='alert alert-success fade in'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong>" +  text +"</div>";
+                      }
+
+
                         function save_ride(){
                             var departure = document.getElementById("departure").value;
                             var destination = document.getElementById('destination').value;
@@ -99,26 +118,24 @@ catch(PDOException $e)
                             var groupstudents = document.getElementById('groupstudents').value;
 
                             if(departure == ""){
-                                alert('Please select a departure.');
+                                setError("Please select a departure.");
                             }else if(destination == ""){
-                                alert('Please select a destination');
+                              setError("Please select a destination.");
                             }else if(departuretime == ""){
-                                alert('Please complete the departure time');
+                              setError("Please complete the departure time.");
                             }else if(timeride == ""){
-                                alert('Please complete the time ride');
+                                setError("Please complete the time ride.");
                             }else if(groupstudents == ""){
-                                alert('Please select a group of students');
+                                setError("Please select a group of students.");
                             }else{
-
-                                var variables = "departure="+departure+"&destination="+destination+"&departuretime="+departuretime+"&timeride="+timeride+"&groupstudents="+groupstudents;
-                                alert(variables);
+                                var variables = "departure="+departure+"&destination="+destination+ "&departuretime="+departuretime+"&timeride="+timeride+"&groupstudents="+groupstudents;
                                 var xmlhttp = new XMLHttpRequest();
                                 xmlhttp.onreadystatechange = function() {
                                     if (this.readyState == 4 && this.status == 200) {
-                                        alert(this.responseText);
+                                       setSuccess(this.responseText);
                                     }
                                 };
-                                xmlhttp.open("POST", "saveride.php", true);
+                                xmlhttp.open("POST", "ajax/saveride.php", true);
                                 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                                 xmlhttp.send(variables);
                             }
@@ -192,6 +209,11 @@ catch(PDOException $e)
                     <script async defer
                         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvZFcrGyYZT8nzENpiPKuemDOB3e4Cr60&libraries=places&callback=initMap">
                     </script>
+                    <script>
+                     $( function() {
+                       $('#datepicker').datetimepicker();
+                     } );
+                     </script>
                 </div>
 
         </div>
