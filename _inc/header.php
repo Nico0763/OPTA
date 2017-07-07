@@ -74,6 +74,6 @@
         </div>
         <!-- /.container -->
     </nav>
-
+    <img src="img/banniere.png" style="width:100%" />
     <!-- Page Content -->
     <div class="container">

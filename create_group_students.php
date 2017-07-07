@@ -14,6 +14,10 @@ require_once("_inc/header.php"); ?>
             </div>
         </div>
 
+        <div id="alert">
+
+        </div>
+
         <!-- Content Row -->
         <div class="row">
             <!-- Contact Details Column -->
@@ -108,5 +112,18 @@ require_once("_inc/header.php"); ?>
             </div>
         </div>
         <!-- /.row -->
+
+        <script>
+          function setError(text)
+          {
+            document.getElementById("alert").innerHTML = "<div class='alert alert-danger fade in'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Error!</strong>" +  text +"</div>";
+          }
+          function setSuccess(text)
+          {
+            document.getElementById("alert").innerHTML = "<div class='alert alert-success fade in'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Success!</strong>" +  text +"</div>";
+          }
+
+        </script>
+
 
     <?php require_once("_inc/footer.php"); ?>

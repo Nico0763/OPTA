@@ -1,5 +1,5 @@
 <?php require_once("_inc/header.php"); ?>
-
+<br/>
 <div class="row">
   <div class="col col-md-offset-1 col-md-2">
     <img style="width:75%; margin-left: auto;
@@ -12,7 +12,7 @@
   </div>
 </div>
 
-
+<hr/>
 
 <div class="row">
   <div class="col col-md-offset-1 col-md-8">
@@ -26,6 +26,7 @@
 
   </div>
 </div>
+<hr/>
 
 <div class="row">
   <div class="col col-md-offset-1 col-md-2">
