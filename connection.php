@@ -8,7 +8,7 @@ require_once("_inc/header.php"); ?>
                 <h1 class="page-header">Login
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Home</a>
                     </li>
                     <li class="active">Connection</li>
                 </ol>

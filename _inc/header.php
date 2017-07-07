@@ -42,7 +42,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">OPTA</a>
+                <a class="navbar-brand" href="index.php">OPTA</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -59,9 +59,6 @@
                     <li <?php if(isset($active)) if($active == "refunddriver") echo "class='active'"; ?>>
                         <a href="refund_driver.php">Refund a driver</a>
                     </li>
-                    <li <?php if(isset($active)) if($active == "myrides") echo "class='active'"; ?>>
-                        <a href="rides.php">My rides</a>
-                    </li>
                     <li <?php if(isset($active)) if($active == "login") echo "class='active'"; ?>>
                         <a href="connection.php">Login</a>
                     </li>
@@ -71,7 +68,6 @@
                     <li <?php if(isset($active)) if($active == "drive") echo "class='active'"; ?> >
                         <a href="drive.php">Drive    ! </a>
                     </li>
-
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

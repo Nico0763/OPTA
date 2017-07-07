@@ -14,7 +14,7 @@ require_once("_inc/header.php"); ?>
                 <h1 class="page-header">Create a ride
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Home</a>
                     </li>
                     <li class="active">Create a ride</li>
                 </ol>
@@ -24,7 +24,7 @@ require_once("_inc/header.php"); ?>
         <!-- Content Row -->
         <div class="row">
             <!-- Contact Details Column -->
-           
+
                 <div class="col-md-6">
                     <div class="input-group form-group">
                         <span class="input-group-addon" id="basic-addon1">Departure</span>
@@ -35,7 +35,7 @@ require_once("_inc/header.php"); ?>
                         <span class="input-group-addon" id="basic-addon1">Destination</span>
                         <!--<input type="text" class="form-control" id="departure" placeholder="Departure">-->
                         <input id="destination" class="form-control" type="text" placeholder="Enter a location">
-                    </div>                    
+                    </div>
                     <div class="input-group form-group">
                         <span class="input-group-addon" id="basic-addon1">Departure time</span>
                         <input type="text" class="form-control" id="departuretime" placeholder="00:00:00">
@@ -76,20 +76,20 @@ require_once("_inc/header.php"); ?>
                             }else if(groupstudents == ""){
                                 alert('Please select a group of students');
                             }else{
-                                
+
                                 var variables = "departure="+departure+"&destination="+destination+"&departuretime="+departuretime+"&timeride="+timeride+"&groupstudents="+groupstudents;
                                 alert(variables);
                                 var xmlhttp = new XMLHttpRequest();
                                 xmlhttp.onreadystatechange = function() {
                                     if (this.readyState == 4 && this.status == 200) {
-                                        alert(this.responseText);                                     
+                                        alert(this.responseText);
                                     }
                                 };
                                 xmlhttp.open("POST", "saveride.php", true);
                                 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                                 xmlhttp.send(variables);
                             }
-                            
+
                         }
 
                         function initMap() {
@@ -124,7 +124,7 @@ require_once("_inc/header.php"); ?>
                                     window.alert("Autocomplete's returned place contains no geometry");
                                     return;
                                 }
-                                
+
                                 // If the place has a geometry, then present it on a map.
                                 if (place.geometry.viewport) {
                                     map.fitBounds(place.geometry.viewport);
@@ -141,7 +141,7 @@ require_once("_inc/header.php"); ?>
                                 }));
                                 marker.setPosition(place.geometry.location);
                                 marker.setVisible(true);
-                                
+
                                 var address = '';
                                 if (place.address_components) {
                                     address = [
@@ -150,9 +150,9 @@ require_once("_inc/header.php"); ?>
                                       (place.address_components[2] && place.address_components[2].short_name || '')
                                     ].join(' ');
                                 }
-                            
+
                                 infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-                                infowindow.open(map, marker); 
+                                infowindow.open(map, marker);
                             });
                          }
                     </script>
@@ -160,7 +160,7 @@ require_once("_inc/header.php"); ?>
                         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvZFcrGyYZT8nzENpiPKuemDOB3e4Cr60&libraries=places&callback=initMap">
                     </script>
                 </div>
-            
+
         </div>
         <!-- /.row -->
 
