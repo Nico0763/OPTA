@@ -1,4 +1,5 @@
 <?php
+session_start();
 $mail = $_POST['mail'];
 $password_login = $_POST['password'];
 

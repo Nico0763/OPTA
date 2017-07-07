@@ -1,4 +1,5 @@
 <?php
+session_start();
 $name =  $_POST['name'];
 $address = $_POST['address'];
 $pc = $_POST['pc'];

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $departure =  $_POST['departure'];
 $destination = $_POST['destination'];
 $departuretime = $_POST['departuretime'];
